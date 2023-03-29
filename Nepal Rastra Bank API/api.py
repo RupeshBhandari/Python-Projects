@@ -53,7 +53,7 @@ class Currency():
                     print(f"'Currency Buy:' {float(j['buy']) * amount/float(j['currency']['unit'])}")
                     print(f"'Currency Sell:' {float(j['sell']) * amount/float(j['currency']['unit'])}")
 
-    
+
 
 req = requests.get(f'https://www.nrb.org.np/api/forex/v1/rate/')
 req = req.json()
@@ -82,6 +82,3 @@ currency_code_input = int(input(f'Choose the Currency Code:'))
 #====================================================================================================
 
 print(Currency(date='2021-03-28', currency=curr_dict[currency_code_input]).get_data())
-
-# Currency().convert_to_npr(1000)
-
