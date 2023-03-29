@@ -11,7 +11,7 @@ class Currency():
 
     def get_data(self):
         for i in self.data['data']:
-            # print(self.data['data'][i]['date'])
+
             for j in self.data['data'][i]['rates']:
                 
                 if j['currency']['iso3'] == self.currency:
@@ -25,7 +25,6 @@ class Currency():
     def convert_to_npr(self, amount):
         self.amount = amount
         for i in self.data['data']:
-            # print(self.data['data'][i]['date'])
             
             for j in self.data['data'][i]['rates']:
                 
