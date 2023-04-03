@@ -1,0 +1,46 @@
+Task 
+
+As part of the data analysis, you need to provide a response to the following questions. Wherever required, provide relevant interpretation.   
+
+Question 1 
+
+How many matches ended in “tie” and played “super-over”?  
+
+Question 2 
+
+Which team had won by maximum runs? For this match, list the venue, date, player of the match, city, and season?  
+
+Question 3 
+
+How many toss-winning teams have chosen to field and won the matches? What is the percentage of it? Use a suitable graph
+to show the result visually.  
+
+Question 4 
+
+Which toss-winning team had played maximum dot balls? What is the match number? Against which team this match was played?  
+
+Question 5 
+
+Which team had won by maximum wicket, by applying the condition “player of the match is a batsman”?  
+
+Question 6 
+
+Which player has received the maximum player of the match awards? Also, show the graphical view taking the franchise into
+consideration. (Hint: Franchise here means that the player representing the X team in taking all seasons into consideration)  .
+
+
+Question 7 
+
+Which team has used the maximum number of bowlers in an innings? List their bowling statistics. (Hint: Bowling statistics include bowler name, runs conceded, wickets taken, and bowling economy)  
+
+Question 8 
+
+Which teams had won the “super-over” battle while batting first? For these matches, find the season and Player of the Match. 
+
+Question 9 
+
+Considering all seasons, find the highest score in IPL. Show the score distribution using a suitable graph.  
+
+Question 10 
+
+Which IPL Team is most successful? The most successful team is the one who has one the greatest number of matches, considering all seasons. Also, interpret the result with the help of plots/graphs.  
