@@ -2,7 +2,9 @@ import re
 import pandas as pd
 
 
-data = pd.read_excel('data.xlsx', sheet_name='Sheet1')
+aircraft_code = '9N-AMN'
+
+data = pd.read_excel(f'{aircraft_code}.xlsx', sheet_name='Sheet1')
 
 # print(data)
 all = []
@@ -17,11 +19,19 @@ for i in data.index:
         hrs_raw = ""
         print("-----------------")
         print(raw)
+    except TypeError:
+        hrs_raw = ""
+        print("-----------------")
+        print(raw)
 
     try:
         cycle_raw = re.findall(r'([-\d]+\sC)', raw)
         cycle_raw = cycle_raw[0].split(' C')[0]
     except IndexError:
+        cycle_raw = ""
+        print("-----------------")
+        print(raw)
+    except TypeError:
         cycle_raw = ""
         print("-----------------")
         print(raw)
@@ -33,11 +43,15 @@ for i in data.index:
         days_raw = ""
         print("-----------------")
         print(raw)
+    except TypeError:
+        days_raw = ""
+        print("-----------------")
+        print(raw)
 
     all.append(([data['Serial No.'][i], data['Total'][i],hrs_raw, cycle_raw, days_raw]))
 
 print(all)
 processed_data = pd.DataFrame(all, columns=['Serial No.', 'Total','Hrs', 'Cycle', 'Days'])
 
-processed_data.to_excel('processed_data.xlsx', index=False)
+processed_data.to_excel(f'{aircraft_code}.xlsx', index=False)
 
