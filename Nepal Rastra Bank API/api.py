@@ -9,7 +9,12 @@ class Currency():
         self.currency = currency
         
         # requests from API
-        self.data = requests.get(f'https://www.nrb.org.np/api/forex/v1/rate/?from={self.date}&to={self.date}')
+        self.data = requests.get(f'https://www.nrb.org.np/api/forex/v1/rates/?from={self.date}&to={self.date}')
+        
+#         rate is for today rate and rates for mutiple date!!!!!
+
+#         https://www.nrb.org.np/api/forex/v1/rates/?page=6&from=2021-03-27&to=2023-05-04&per_page=100
+
         self.data = self.data.json()
 
     def get_data(self):
