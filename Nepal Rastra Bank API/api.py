@@ -42,15 +42,16 @@ class Currency:
 
     def get_data(self):
         '''This method returns the data from the API'''
+        
         self._get_page(1)
-        # self.data = []
+
         for i in range(1, self.total_pages + 1):
             payload = self._get_page(i)
             data = self._parse_data(payload)
             self.data.extend(data)
         
-        print(self.data)
         df = pd.DataFrame(self.data)
+        
         return df.to_markdown()
 
 
