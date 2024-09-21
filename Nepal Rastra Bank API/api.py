@@ -6,10 +6,10 @@ import pandas as pd
 class Currency:
     '''This class is used to get the data from the API'''
 
-    def __init__(self, date_from=None, date_to=None):
+    def __init__(self):
         '''This function is used to initialize the class'''
-        self.date_from = date_from or dt.date.today()
-        self.date_to = date_to or dt.date.today()
+        self.date_from = dt.date.today()
+        self.date_to = dt.date.today()
         self.data = []
         self.total_pages = None
         self.total_records = None
@@ -63,7 +63,7 @@ class Currency:
         return self.parsed_data
     
 
-    def get_data(self):
+    def get_data(self, date_from=None, date_to=None):
         '''This method returns the data from the API'''
         self._get_metadata()
         self.data = []
@@ -76,5 +76,11 @@ class Currency:
 
 
 if __name__ == "__main__":
+<<<<<<< HEAD
     Curr = Currency(date_from='2023-05-04', date_to='2023-05-04').get_data()
     print(Curr)
+=======
+    Curr = Currency().get_data(date_from='2023-05-01', date_to='2023-05-04')
+    print(Curr)
+
+>>>>>>> b6c8997be45dab618eb18f5ff84346955d6b7ac5
