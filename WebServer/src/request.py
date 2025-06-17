@@ -9,36 +9,41 @@ class HttpRequest:
     @classmethod
     def parse(cls, raw_request):
         # Parse the raw HTTP request
+        # First, ensure we're working with a string
+        if isinstance(raw_request, bytes):
+            raw_request = raw_request.decode("utf-8")
+
         # Split the request into lines
-        lines = raw_request.strip().split('\n')
-        
+        lines = raw_request.strip().split("\n")
+
         # Parse the request line (first line)
         if lines:
             method, path, protocol = lines[0].split()
         else:
             method, path, protocol = "", "", ""
-            
+
         # Parse headers
         headers = {}
         i = 1
         while i < len(lines) and lines[i]:
-            key, value = lines[i].split(':', 1)
+            key, value = lines[i].split(":", 1)
             headers[key.strip()] = value.strip()
             i += 1
-            
+
         # Parse body if any
         data = None
         if i < len(lines) - 1:
-            data = '\n'.join(lines[i+1:])
-            
+            data = "\n".join(lines[i + 1 :])
+
         return method, path, protocol, headers, data
-    
+
     @classmethod
     def create_http_request(cls, data):
         # Parse the request and create a new HttpRequest object
-        method, path, protocol, headers, body = cls.parse_request(data)
+        method, path, protocol, headers, body = cls.parse(data)
         return HttpRequest(method, path, protocol, headers, body)
-    
+
+
 if __name__ == "__main__":
     http_request_object = HttpRequest.create_http_request(
         """
