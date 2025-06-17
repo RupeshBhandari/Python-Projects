@@ -1,7 +1,8 @@
-from WebServer.src.serverfrombase import run
+from src.server import WebServer
 
 def main():
-    run(port=8000)  # You can change the port number if needed
+    server = WebServer()
+    server.start()
 
 
 if __name__ == "__main__":

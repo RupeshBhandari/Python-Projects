@@ -7,7 +7,7 @@ class HttpRequest:
         self.data = data
 
     @classmethod
-    def parse_request(cls, raw_request):
+    def parse(cls, raw_request):
         # Parse the raw HTTP request
         # Split the request into lines
         lines = raw_request.strip().split('\n')
