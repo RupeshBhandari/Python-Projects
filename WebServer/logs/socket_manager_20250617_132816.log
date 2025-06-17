@@ -1,0 +1,3 @@
+2025-06-17 13:28:16,218 - socket_manager - INFO - Socket initialized on 127.0.0.1:8080
+2025-06-17 13:28:20,759 - socket_manager - INFO - Accepted connection from 127.0.0.1:65098
+2025-06-17 13:28:20,759 - socket_manager - INFO - Accepted connection from 127.0.0.1:65099

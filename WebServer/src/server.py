@@ -3,10 +3,10 @@ from .socket_manager import SocketManager
 from .request_handler import RequestHandler
 from .request import HttpRequest
 from .response import HttpResponse
-
+from src.utils.logger import Logger
 class WebServer:
     def __init__(self, host='127.0.0.1', port=8080):
-        self.logger = logging.getLogger('web_server')
+        self.logger = Logger('web_server')
         self.socket_manager = SocketManager(host, port)
         self.request_handler = RequestHandler()
         self.running = False

@@ -1,0 +1,3 @@
+2025-06-17 13:28:16,218 - web_server - INFO - Web server started on http://127.0.0.1:8080
+2025-06-17 13:28:40,388 - web_server - INFO - Server shutdown requested
+2025-06-17 13:28:40,389 - web_server - INFO - Web server stopped

@@ -1,6 +1,6 @@
 import socket
 import selectors
-import logging
+from src.utils.logger import Logger
 
 class SocketManager:
     def __init__(self, host='127.0.0.1', port=8080, backlog=5):
@@ -9,7 +9,7 @@ class SocketManager:
         self.backlog = backlog
         self.server_socket = None
         self.selector = selectors.DefaultSelector()
-        self.logger = logging.getLogger('socket_manager')
+        self.logger = Logger('socket_manager')
         
     def initialize(self):
         """Create and configure the server socket."""
